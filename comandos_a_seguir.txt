@@ -1,0 +1,25 @@
+Activar wifi con nmcli
+
+# Lista las interfaces
+$ iwconfig
+
+# Revisar si la interfaz está conectada a un dispositivo
+$ iw <interface_name> link
+
+# Escanear las wifis disponibles, si no podemos verlas ejecutamos los siguientes comandos(1)*:
+$ sudo nmcli device wifi list
+
+# Conectarse a la wifi
+$ sudo nmcli device wifi list
+$ sudo nmcli dev wifi connect MOVISTAR_8858 password N3HJPTA9E3KC4PFAHTHH
+
+
+(1)*
+#Miramos si el wifi está desconectado
+$ sudo nmcli r
+
+# Si no está conectado, lo activamos
+$ sudo nmcli r wifi on
+
+# Miramos si podemos listar las redes disponibles
+$ sudo nmcli device wifi list
